@@ -10,6 +10,7 @@
     ;; (huangq-fontset-dejavu 17)))
     ;; (huangq-fontset-fixedsys 17)
     (set-default-font "lucida console-10")
+    ;;(set-default-font "monaco-10")
 ))
 
 (provide 'font-settings)

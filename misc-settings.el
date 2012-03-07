@@ -57,7 +57,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; 不要闪烁光标, 烦不烦啊
-(blink-cursor-mode -1)
+;;(blink-cursor-mode -1)
 
 ;; 防止页面滚动时跳动,scroll-margin 3可以在靠近屏幕边沿3行时就开始滚动,可以很好的看到上下文
 (setq scroll-margin 3
