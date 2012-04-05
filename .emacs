@@ -5,6 +5,7 @@
 (ido-mode 1)
 
 (load  "~/.iemacs/my-subdirs")
+;把.iemacs的所有子目录都加到`load-path'里面
 (my-add-subdirs-to-load-path "~/.iemacs")
 
 (require 'ahei-misc)
@@ -15,7 +16,7 @@
 (require 'misc-settings)
 
 ;; 显示行号
-(require 'linum-settings)
+;;(require 'linum-settings)
 
 (require 'ahei-face)
 
@@ -38,3 +39,4 @@
 ;; 王纯业的desktop, 比desktop快多了
 (require 'wcy-desktop-settings)
 
+;;(require 'cedet-settings)
