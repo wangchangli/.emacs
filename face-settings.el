@@ -23,7 +23,6 @@
 (require 'isearch-face-settings)
 
 (require 'ido-face-settings)
-(require 'linum-face-settings)
 (require 'font-lock-face-settings)
 (require 'minibuffer-face-settings)
 
