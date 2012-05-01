@@ -22,7 +22,7 @@
 
 ;; 用pulse实现Emacs的淡入淡出效果
 ;; http://emacser.com/pulse.htm
-(require 'pulse-settings)
+;;(require 'pulse-settings)
 
 ;;;###autoload
 (defun cedet-settings-4-info ()
