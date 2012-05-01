@@ -16,9 +16,6 @@
 ;; `which-func'颜色设置
 (require 'which-func-face-settings)
 
-;; 括号颜色设置
-(require 'paren-face-settings)
-
 ;; `isearch'颜色设置
 (require 'isearch-face-settings)
 
