@@ -1,7 +1,6 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (global-linum-mode 1)
-;(speedbar)
 (ido-mode 1)
 
 (load  "~/.iemacs/my-subdirs")
@@ -14,15 +13,9 @@
 ;; 一些Emacs的小设置
 (require 'misc-settings)
 
-;; 显示行号
-(require 'linum-settings)
-
 (require 'ahei-face)
 
 (require 'face-settings)
-
-;; 高亮当前行
-;;(require 'hl-line-settings)
 
 ;; 字体配置
 (require 'font-settings)
