@@ -33,3 +33,5 @@
 (require 'wcy-desktop-settings)
 
 ;;(require 'cedet-settings)
+
+(require 'emacs-w3m-settings)

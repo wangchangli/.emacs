@@ -1,5 +1,7 @@
 (require 'slime)
-(slime-setup '(slime-repl inferior-slime slime-autodoc))
+;;(require 'slime-autoloads)
+
+(slime-setup '(inferior-slime slime-repl slime-fuzzy slime-autodoc))
 
 (setq inferior-lisp-program "/usr/bin/sbcl"
       lisp-indent-function 'common-lisp-indent-function
@@ -71,6 +73,11 @@
                                                (slime-sexp-at-point)
                                                (slime-connected-p))
                                       (slime-compile-defun))))))
+
+;; (push (slime-create-filename-translator :machine-instance "remote.example.com"
+;; 					:remote-host "remote"
+;; 					:username "user")
+;;       slime-filename-translations)
 
 (provide 'slime-settings)
 
