@@ -35,3 +35,9 @@
 ;;(require 'cedet-settings)
 
 (require 'emacs-w3m-settings)
+
+(require 'haml-settings)
+
+(require 'coffeescript-settings)
+
+(require 'php-settings)
