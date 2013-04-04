@@ -3,7 +3,7 @@
 
 (slime-setup '(inferior-slime slime-repl slime-fuzzy slime-autodoc))
 
-(setq inferior-lisp-program "/usr/bin/sbcl"
+(setq inferior-lisp-program "/usr/local/bin/sbcl"
       lisp-indent-function 'common-lisp-indent-function
       slime-complete-symbol-function 'slime-fuzzy-complete-symbol
       common-lisp-hyperspec-root "/home/wangchangli/HyperSpec/"
@@ -49,26 +49,26 @@
 (define-key slime-mode-map (kbd "M-DEL") 'paredit-backward-kill-word)
 
 ;; Movement & Navigation
-(define-key slime-mode-map (kbd "C-M-f") 'paredit-forward)
+(define-key slime-mode-map (kbd "C-M-f") 'paredit-forward) 
 (define-key slime-mode-map (kbd "C-M-b") 'paredit-backward)
-(define-key slime-mode-map (kbd "C-M-u") 'paredit-backward-up)
-(define-key slime-mode-map (kbd "C-M-d") 'paredit-forward-down)
-(define-key slime-mode-map (kbd "C-M-p") 'paredit-backward-down)
-(define-key slime-mode-map (kbd "C-M-n") 'paredit-forward-up)
+(define-key slime-mode-map (kbd "C-M-u") 'paredit-backward-up) ;(|)->|()
+(define-key slime-mode-map (kbd "C-M-d") 'paredit-forward-down) ;|()->(|)
+(define-key slime-mode-map (kbd "C-M-p") 'paredit-backward-down) ;()|->(|)
+(define-key slime-mode-map (kbd "C-M-n") 'paredit-forward-up) ;(|)->()|
 ;; forward/backward list;(forward)up/down list;backward-up-list/backward-down-list;
 
 ;; Depth-Changing Commands
-(define-key slime-mode-map (kbd "M-(") 'paredit-wrap-round) ;M-1 (
-(define-key slime-mode-map (kbd "M-s") 'paredit-splice-sexp)
-(define-key slime-mode-map (kbd "M-<up>") 'paredit-splice-sexp-kill-backward)
-(define-key slime-mode-map (kbd "M-<down>") 'paredit-splice-sexp-kill-forward)
+(define-key slime-mode-map (kbd "M-(") 'paredit-wrap-round) ;<=>M-1 (: |print->(|print)
+(define-key slime-mode-map (kbd "M-s") 'paredit-splice-sexp) ;(foo (bar| baz) quux) -> (foo bar| baz quux)
+(define-key slime-mode-map (kbd "M-<up>") 'paredit-splice-sexp-killing-backward) ;(foo (let ((x 5)) |(sqrt n)) bar) -> (foo (sqrt n) bar)
+(define-key slime-mode-map (kbd "M-<down>") 'paredit-splice-sexp-killing-forward) ;(a (b c| d e) f) -> (a b c f)
 (define-key slime-mode-map (kbd "M-r") 'paredit-raise-sexp)
 
 ;; Barfage & Slurpage
-(define-key slime-mode-map (kbd "C-)") 'paredit-forward-slurp-sexp)
-(define-key slime-mode-map (kbd "C-\}") 'paredit-forward-barf-sexp)
-(define-key slime-mode-map (kbd "C-(") 'paredit-backward-slurp-sexp)
-(define-key slime-mode-map (kbd "C-{") 'paredit-backward-barf-sexp)
+(define-key slime-mode-map (kbd "C-)") 'paredit-forward-slurp-sexp) ;(foo (bar |baz) quux zot) -> (foo (bar |baz quux) zot)
+(define-key slime-mode-map (kbd "C-\}") 'paredit-forward-barf-sexp) ;(foo (bar |baz quux) zot) -> (foo (bar |baz) quux zot)
+(define-key slime-mode-map (kbd "C-(") 'paredit-backward-slurp-sexp) ;(foo bar (baz| quux) zot) -> (foo (bar baz| quux) zot)
+(define-key slime-mode-map (kbd "C-{") 'paredit-backward-barf-sexp)  ;(foo (bar baz |quux) zot) -> (foo bar (baz |quux) zot)
 
 ;; Miscellaneous Commands
 (define-key slime-mode-map (kbd "M-S") 'paredit-spilt-sexp)
@@ -77,7 +77,7 @@
 (define-key slime-mode-map (kbd "M-q") 'paredit-reindent-defun)
 
 
-(define-key slime-mode-map (kbd "C-t") 'transpose-sexps)
+(define-key slime-mode-map (kbd "C-t") 'transpose-sexps) ;(1)|(2) -> (2)|(1)
 (define-key slime-mode-map (kbd "C-M-t") 'transpose-chars)
 (define-key slime-mode-map (kbd "TAB") 'slime-indent-and-complete-symbol)
 (define-key slime-mode-map (kbd "C-c TAB") 'slime-complete-form)
@@ -106,7 +106,7 @@
                                       (slime-compile-defun))))))
 
 ;; (push (slime-create-filename-translator :machine-instance "remote.example.com"
-;; 					:remote-host "remote"
+;; 					remote-host "remote"
 ;; 					:username "user")
 ;;       slime-filename-translations)
 
