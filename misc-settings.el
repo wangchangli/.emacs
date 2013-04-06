@@ -18,8 +18,8 @@
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 ;; 个人信息
-(setq user-mail-address "ahei0802@gmail.com")
-(setq user-full-name    "ahei")
+(setq user-mail-address "changliwang2009@gmail.com")
+(setq user-full-name    "wcharlie")
 
 ;; 在fringe上显示一个小箭头指示当前buffer的边界
 (setq-default indicate-buffer-boundaries 'left)
