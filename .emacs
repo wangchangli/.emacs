@@ -14,6 +14,9 @@
 
 (require 'ahei-misc)
 
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
 (require 'util)
 
 (require 'misc-settings)
@@ -27,3 +30,4 @@
 (setq coffee-tab-width 2)
 (require 'haml-mode)
 (require 'php-mode)
+(require 'markdown-mode)
