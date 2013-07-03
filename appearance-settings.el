@@ -1,5 +1,5 @@
 (menu-bar-mode 0)
-(tool-bar-mode 0)
+;;(tool-bar-mode 0)
 (global-linum-mode 1)
 ;;(require 'ido-face-settings)
 ;;(require 'isearch-face-settings)
