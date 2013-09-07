@@ -31,3 +31,5 @@
 (require 'haml-mode)
 (require 'php-mode)
 (require 'markdown-mode)
+
+(setq make-backup-files nil)
