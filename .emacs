@@ -33,3 +33,11 @@
 (require 'markdown-mode)
 
 (setq make-backup-files nil)
+
+;; template
+(require 'template)
+(template-initialize)
+(add-to-list 'template-find-file-commands
+             'ido-exit-minibuffer)
+(add-to-list 'template-subdirectories
+             "~/.iemacs/template/templates/")
